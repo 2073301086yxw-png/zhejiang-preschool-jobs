@@ -664,19 +664,36 @@ function render() {
 render();
 
 // ===== 城市筛选 =====
+// 城市名映射
+const CITY_MAP = {
+  'hangzhou': '杭州',
+  'ningbo': '宁波',
+  'wenzhou': '温州',
+  'shaoxing': '绍兴',
+  'jinhua': '金华',
+  'taizhou': '台州',
+  'lishui': '丽水',
+  'quzhou': '衢州'
+};
+
 document.querySelectorAll('.city-tab').forEach(tab => {
   tab.addEventListener('click', function(e) {
     e.preventDefault();
     document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
     this.classList.add('active');
 
-    const target = this.getAttribute('href').slice(1);
-    if (target === 'all') {
+    const targetKey = this.getAttribute('href').slice(1);
+    if (targetKey === 'all') {
       document.querySelectorAll('.city-section').forEach(s => s.style.display = 'block');
+      document.getElementById('totalCount').textContent = JOBS.length;
     } else {
+      const targetCity = CITY_MAP[targetKey] || targetKey;
       document.querySelectorAll('.city-section').forEach(s => {
-        s.style.display = s.dataset.city === target ? 'block' : 'none';
+        s.style.display = s.dataset.city === targetCity ? 'block' : 'none';
       });
+      // 更新统计数
+      const filteredCount = JOBS.filter(j => j.city === targetCity).length;
+      document.getElementById('totalCount').textContent = filteredCount;
     }
   });
 });
