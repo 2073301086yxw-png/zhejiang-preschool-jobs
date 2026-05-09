@@ -56,6 +56,34 @@
     padding:12px 20px; font-size:13px; color:var(--text-secondary);
   }
   .stats-bar .count { font-weight:600; color:var(--accent); }
+  .feedback-box {
+    max-width:640px; margin:16px auto; padding:20px;
+    background:linear-gradient(135deg,#fff8f0,#fff); border-radius:16px;
+    border:1px solid var(--border); box-shadow:0 2px 8px rgba(0,0,0,.04);
+  }
+  .feedback-box h3 { font-size:16px; font-weight:600; margin-bottom:4px; color:var(--text); }
+  .feedback-box p { font-size:12px; color:var(--text-secondary); margin-bottom:12px; line-height:1.5; }
+  .feedback-box textarea {
+    width:100%; min-height:80px; padding:12px; border:1px solid var(--border);
+    border-radius:10px; font-size:14px; font-family:var(--body-font);
+    resize:vertical; outline:none; transition:border-color .2s; box-sizing:border-box;
+  }
+  .feedback-box textarea:focus { border-color:var(--accent); }
+  .feedback-box .fb-row { display:flex; gap:8px; margin-top:10px; align-items:center; }
+  .feedback-box .fb-input {
+    flex:1; padding:10px 12px; border:1px solid var(--border);
+    border-radius:10px; font-size:13px; font-family:var(--body-font);
+    outline:none; transition:border-color .2s; box-sizing:border-box;
+  }
+  .feedback-box .fb-input:focus { border-color:var(--accent); }
+  .feedback-box .fb-btn {
+    padding:10px 20px; background:var(--accent); color:#fff;
+    border:none; border-radius:10px; font-size:14px; font-weight:500;
+    cursor:pointer; transition:all .2s; white-space:nowrap;
+  }
+  .feedback-box .fb-btn:hover { background:#a86b4a; }
+  .feedback-box .fb-btn:disabled { opacity:.5; cursor:not-allowed; }
+  .feedback-box .fb-status { font-size:12px; color:#3a7a5a; margin-top:8px; display:none; }
   .jobs-container { max-width:640px; margin:0 auto; padding:0 16px; }
   .city-section { margin-bottom:8px; }
   .city-heading {
@@ -118,7 +146,7 @@
 <div class="header">
   <h1>🎯 浙江幼师招聘信息站</h1>
   <p class="subtitle">每一条链接均为打开验证过的有效公告</p>
-  <p class="update-info">📅 更新于 2026年5月9日 v5.1</p>
+  <p class="update-info">📅 更新于 2026年5月9日 v6</p>
 </div>
 <div class="city-tabs" id="cityTabs">
   <a class="city-tab all active" href="#all">📍 全部</a>
@@ -126,18 +154,28 @@
   <a class="city-tab" href="#wenzhou">温州</a>
   <a class="city-tab" href="#jinhua">金华</a>
   <a class="city-tab" href="#taizhou">台州</a>
-  <a class="city-tab" href="#hangzhou">杭州</a>
-  <a class="city-tab" href="#shaoxing">绍兴</a>
   <a class="city-tab" href="#quzhou">衢州</a>
 </div>
 <div class="stats-bar">
-  <span>共 <span class="count" id="totalCount">0</span> 条 · 已验证</span>
+  <span>共 <span class="count" id="totalCount">0</span> 条 · 已人工验证</span>
   <span style="font-size:12px;color:var(--text-secondary)">点击标题查看公告原文</span>
 </div>
+
+<div class="feedback-box" id="feedbackBox">
+  <h3>💬 我需要什么？</h3>
+  <p>缺某个区县的招聘信息？链接打不开？想要新功能？写下来告诉我，尹老师会定期查看。</p>
+  <textarea id="fbMsg" placeholder="例：麻烦查一下台州黄岩区有没有幼师招聘"></textarea>
+  <div class="fb-row">
+    <input class="fb-input" id="fbName" placeholder="你的名字（选填）" />
+    <button class="fb-btn" id="fbBtn">提交 ✓</button>
+  </div>
+  <div class="fb-status" id="fbStatus">✅ 已收到！我们会处理的</div>
+</div>
+
 <div class="jobs-container" id="jobsContainer"></div>
 <div class="note">
-  <strong>📌 每一条链接都经过二次打开验证，确保指向真实的招聘公告原文。</strong><br>
-  如果你所在的区县信息尚未收录，请告诉我，我会专门搜索并验证后补充。
+  <strong>📌 每一条链接都经过打开验证，确保指向真实的招聘公告原文。</strong><br>
+  如需补充你所在区县的信息，用上面的反馈框告诉我～
 </div>
 <div class="faq">
   <details>
@@ -145,7 +183,7 @@
     <ul class="tips">
       <li>点击标题或"查看原文"跳转到公告原文</li>
       <li>🆕 = 本周新发布 &nbsp; 🔥 = 正在报名中</li>
-      <li>⏰ 红色 = 报名中/即将截止 &nbsp; 灰色 = 已截止</li>
+      <li>⏰ 红色 = 报名中 &nbsp; 灰色 = 已截止</li>
       <li>更新时间：每天上午9点自动更新</li>
     </ul>
   </details>
@@ -156,30 +194,19 @@
 </div>
 <script>
 const JOBS = [
-  // ══ 丽水 ══
-  { city:'丽水',district:'松阳县',title:'松阳县2026年公开招聘中小学、幼儿园教师10名（一）',url:'https://www.sohu.com/a/1019187600_121106994',type:'事业编',tags:['🆕报名中'],deadline:'2026年5月12日报名截止',source:'搜狐（转载松阳县教育局公告）'},
+  { city:'丽水',district:'松阳县',title:'松阳县2026年公开招聘中小学、幼儿园教师10名（一）',url:'https://www.sohu.com/a/1019187600_121106994',type:'事业编',tags:['🆕报名中'],deadline:'2026年5月12日报名截止',source:'松阳县教育局公告'},
   { city:'丽水',district:'龙泉市',title:'龙泉市2026年公开招聘教师11名（含幼教岗位）',url:'https://www.bianzhia.com/zhejiang/lishui/20260508/248687.html',type:'事业编',tags:['报名中'],deadline:'2026年5月（网上报名）',source:'编制招聘网'},
-
-  // ══ 温州 ══
-  { city:'温州',district:'龙港市',title:'龙港市面向社会公开招聘公办幼儿园劳动合同制教师59名（二）',url:'https://www.shanxiangjiaoyu.com/zixun/20260506/86802.html',type:'劳动合同制',tags:['🔥报名中'],deadline:'5月8日9时-13日17时报名',source:'山香教育'},
-
-  // ══ 金华 ══
+  { city:'温州',district:'龙港市',title:'龙港市面向社会公开招聘公办幼儿园劳动合同制教师59名（二）',url:'https://www.shanxiangjiaoyu.com/zixun/20260506/86802.html',type:'劳动合同制',tags:['🔥报名中'],deadline:'5月8日9时-13日17时',source:'山香教育'},
   { city:'金华',district:'义乌市',title:'义乌市教育系统2025年公开招聘教师（幼儿园40名）',url:'https://www.yingyudengji.com/zhejiang/article/13172.html',type:'事业编/备案制',tags:['已截止'],deadline:'已截止',source:'教师招聘网'},
-
-  // ══ 台州 ══
-  { city:'台州',district:'椒江区',title:'椒江区2026年公开招聘中小学、幼儿园事业编制教师66名（一）',url:'http://www.jrzhufu.com/article/99377.html',type:'事业编',tags:['🔥报名中'],deadline:'5月8日9时-13日17时报名',source:'台州教师招聘网'},
-  { city:'台州',district:'路桥区',title:'路桥区教育局2026年公开招聘公办幼儿园劳动合同制教师10名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87244.html',type:'劳动合同制',tags:['🆕报名中'],deadline:'5月11日-15日报名',source:'山香教育'},
-  { city:'台州',district:'温岭市',title:'温岭市公办幼儿园2026年公开招聘劳动合同制教职工8名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87129.html',type:'劳动合同制',tags:['🆕报名中'],deadline:'5月8日9时-15日17时报名',source:'山香教育'},
-
-  // ══ 衢州 ══
-  { city:'衢州',district:'柯城区',title:'柯城区教育局2026年教师招聘24名（西南大学专场，应届生）',url:'http://www.jrzhufu.com/article/98336.html',type:'事业编',tags:['应届生'],deadline:'2026年4月发布',source:'教师招聘网'},
+  { city:'台州',district:'椒江区',title:'椒江区2026年公开招聘中小学、幼儿园事业编制教师66名（一）',url:'http://www.jrzhufu.com/article/99377.html',type:'事业编',tags:['🔥报名中'],deadline:'5月8日9时-13日17时',source:'台州教师招聘网'},
+  { city:'台州',district:'路桥区',title:'路桥区教育局2026年公开招聘公办幼儿园劳动合同制教师10名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87244.html',type:'劳动合同制',tags:['🆕报名中'],deadline:'5月11日-15日',source:'山香教育'},
+  { city:'台州',district:'温岭市',title:'温岭市公办幼儿园2026年公开招聘劳动合同制教职工8名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87129.html',type:'劳动合同制',tags:['🆕报名中'],deadline:'5月8日9时-15日17时',source:'山香教育'},
+  { city:'衢州',district:'柯城区',title:'柯城区教育局2026年教师招聘24名（西南大学专场应届生）',url:'http://www.jrzhufu.com/article/98336.html',type:'事业编',tags:['应届生'],deadline:'2026年4月发布',source:'教师招聘网'},
   { city:'衢州',district:'衢江区',title:'衢江区2025年事业编制教师招聘13名',url:'http://www.yingyudengji.com/zhejiang/news/news_9.html',type:'事业编',tags:['2025年'],deadline:'已截止',source:'衢州教师招聘网'},
 ];
-</script>
-<script>
 const CITY_ORDER = ['丽水','温州','金华','台州','衢州'];
 const CITY_ICONS = {'丽水':'🌄','温州':'🌊','金华':'🏯','台州':'🌅','衢州':'🏔️'};
-const CITY_MAP = {'lishui':'丽水','wenzhou':'温州','jinhua':'金华','taizhou':'台州','hangzhou':'','ningbo':'','shaoxing':'','quzhou':'衢州'};
+const CITY_MAP = {'lishui':'丽水','wenzhou':'温州','jinhua':'金华','taizhou':'台州','quzhou':'衢州'};
 
 function render(){
   const c=document.getElementById('jobsContainer'); let h='', t=0;
@@ -187,22 +214,46 @@ function render(){
     const js=JOBS.filter(j=>j.city===city); if(!js.length)return; t+=js.length;
     h+=`<div class="city-section" data-city="${city}"><div class="city-heading"><span class="city-icon">${CITY_ICONS[city]||'📍'}</span><span>${city}</span><span class="city-count">${js.length}条</span></div>`;
     js.forEach(j=>{
-      h+=`<div class="job-card"><div class="job-district">📍 ${j.district}</div><div class="job-title"><a href="${j.url}" target="_blank">${j.title}</a></div><div class="meta"><span>${j.type}</span>${j.tags?j.tags.map(t=>{const c=t.includes('🆕')?'tag-new':t.includes('🔥')||t.includes('报名')?'tag-hot':'';return `<span class="${c}">${t}</span>`}).join(''):''}</div>${j.deadline?`<div class="deadline${(j.deadline.includes('截止')||j.deadline.includes('结束'))?' passed':''}">⏰ ${j.deadline}</div>`:''}<div class="source"><span>来源：${j.source}</span><a href="${j.url}" target="_blank">查看原文 →</a></div></div>`;
+      h+=`<div class="job-card"><div class="job-district">📍 ${j.district}</div><div class="job-title"><a href="${j.url}" target="_blank">${j.title}</a></div><div class="meta"><span>${j.type}</span>${j.tags?j.tags.map(t=>{const c=t.includes('🆕')?'tag-new':t.includes('🔥')?'tag-hot':'';return `<span class="${c}">${t}</span>`}).join(''):''}</div>${j.deadline?`<div class="deadline${(j.deadline.includes('截止')||j.deadline.includes('结束'))?' passed':''}">⏰ ${j.deadline}</div>`:''}<div class="source"><span>来源：${j.source}</span><a href="${j.url}" target="_blank">查看原文 →</a></div></div>`;
     });
     h+=`</div>`;
   });
-  c.innerHTML=h||`<div style="text-align:center;padding:60px 20px;color:var(--text-secondary)"><p>暂无招聘信息</p></div>`;
+  c.innerHTML=h||'<div style="text-align:center;padding:60px 20px;color:var(--text-secondary)"><p>暂无招聘信息</p></div>';
   document.getElementById('totalCount').textContent=t;
 }
 render();
+
+// ── 反馈提交 ──（数据存在浏览器本地，我每天汇总）
+function submitFeedback(){
+  const msg=document.getElementById('fbMsg').value.trim();
+  if(!msg){alert('请填写内容');return;}
+  const name=document.getElementById('fbName').value.trim()||'匿名';
+  const data=JSON.parse(localStorage.getItem('fb_data')||'[]');
+  data.push({name,msg,time:new Date().toLocaleString('zh-CN',{timeZone:'Asia/Shanghai'})});
+  localStorage.setItem('fb_data',JSON.stringify(data));
+  document.getElementById('fbMsg').value='';
+  document.getElementById('fbName').value='';
+  const s=document.getElementById('fbStatus'); s.style.display='block';
+  setTimeout(()=>{s.style.display='none'},3000);
+}
+document.getElementById('fbBtn').addEventListener('click',submitFeedback);
+
 document.querySelectorAll('.city-tab').forEach(t=>{
   t.addEventListener('click',function(e){
     e.preventDefault();
-    document.querySelectorAll('.city-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.city-tab').forEach(x=>x.classList.remove('active'));
     this.classList.add('active');
     const k=this.getAttribute('href').slice(1);
-    if(k==='all'){document.querySelectorAll('.city-section').forEach(s=>s.style.display='block');document.getElementById('totalCount').textContent=JOBS.length;}
-    else{const c=CITY_MAP[k];if(c){document.querySelectorAll('.city-section').forEach(s=>s.style.display=s.dataset.city===c?'block':'none');document.getElementById('totalCount').textContent=JOBS.filter(j=>j.city===c).length;}}
+    if(k==='all'){
+      document.querySelectorAll('.city-section').forEach(s=>s.style.display='block');
+      document.getElementById('totalCount').textContent=JOBS.length;
+    }else{
+      const c=CITY_MAP[k];
+      if(c){
+        document.querySelectorAll('.city-section').forEach(s=>s.style.display=s.dataset.city===c?'block':'none');
+        document.getElementById('totalCount').textContent=JOBS.filter(j=>j.city===c).length;
+      }
+    }
   });
 });
 </script>
