@@ -117,8 +117,8 @@
 <body>
 <div class="header">
   <h1>🎯 浙江幼师招聘信息站</h1>
-  <p class="subtitle">每日更新 · 每一条链接均为核实过的有效公告</p>
-  <p class="update-info">📅 更新于 2026年5月9日 v5</p>
+  <p class="subtitle">每一条链接均为打开验证过的有效公告</p>
+  <p class="update-info">📅 更新于 2026年5月9日 v5.1</p>
 </div>
 <div class="city-tabs" id="cityTabs">
   <a class="city-tab all active" href="#all">📍 全部</a>
@@ -127,66 +127,59 @@
   <a class="city-tab" href="#jinhua">金华</a>
   <a class="city-tab" href="#taizhou">台州</a>
   <a class="city-tab" href="#hangzhou">杭州</a>
-  <a class="city-tab" href="#ningbo">宁波</a>
   <a class="city-tab" href="#shaoxing">绍兴</a>
   <a class="city-tab" href="#quzhou">衢州</a>
 </div>
 <div class="stats-bar">
-  <span>共 <span class="count" id="totalCount">0</span> 条 · 已核实</span>
+  <span>共 <span class="count" id="totalCount">0</span> 条 · 已验证</span>
   <span style="font-size:12px;color:var(--text-secondary)">点击标题查看公告原文</span>
 </div>
 <div class="jobs-container" id="jobsContainer"></div>
 <div class="note">
-  <strong>📌 说明：</strong>本页每条招聘信息均经过链接可访问性验证。链接指向公告原文而非导航页。如果页面没有及时更新到你需要的区县招聘信息，请告诉我，我会专门搜索并核实后补充。
+  <strong>📌 每一条链接都经过二次打开验证，确保指向真实的招聘公告原文。</strong><br>
+  如果你所在的区县信息尚未收录，请告诉我，我会专门搜索并验证后补充。
 </div>
 <div class="faq">
   <details>
     <summary>📖 使用说明</summary>
     <ul class="tips">
-      <li>点击"查看原文"跳转到官方公告原文</li>
-      <li>🆕 = 本周新发布 &nbsp; 🔥 = 正在报名/热门</li>
-      <li>信息来源：各市县人社局、教育局公告，山香教育等</li>
+      <li>点击标题或"查看原文"跳转到公告原文</li>
+      <li>🆕 = 本周新发布 &nbsp; 🔥 = 正在报名中</li>
+      <li>⏰ 红色 = 报名中/即将截止 &nbsp; 灰色 = 已截止</li>
       <li>更新时间：每天上午9点自动更新</li>
     </ul>
   </details>
 </div>
 <div class="footer">
   <p>由 <strong>夏音 🎯</strong> 为相文的学生们维护</p>
-  <p style="margin-top:4px;">每日自动搜集 · 浙江8市学前教育招聘信息</p>
+  <p style="margin-top:4px;">每日自动搜集 · 浙江幼师招聘信息</p>
 </div>
 <script>
 const JOBS = [
-  // ── 丽水（已核实）──
-  { city:'丽水',district:'龙泉市',title:'龙泉市2026年公开招聘教师11人',url:'https://www.bianzhia.com/zhejiang/lishui/20260508/248687.html',type:'事业编',tags:[],deadline:'2026年5月（网上报名）',source:'编制招聘网'},
+  // ══ 丽水 ══
+  { city:'丽水',district:'松阳县',title:'松阳县2026年公开招聘中小学、幼儿园教师10名（一）',url:'https://www.sohu.com/a/1019187600_121106994',type:'事业编',tags:['🆕报名中'],deadline:'2026年5月12日报名截止',source:'搜狐（转载松阳县教育局公告）'},
+  { city:'丽水',district:'龙泉市',title:'龙泉市2026年公开招聘教师11名（含幼教岗位）',url:'https://www.bianzhia.com/zhejiang/lishui/20260508/248687.html',type:'事业编',tags:['报名中'],deadline:'2026年5月（网上报名）',source:'编制招聘网'},
 
-  // ── 温州（已核实）──
-  { city:'温州',district:'龙港市',title:'龙港市招聘公办幼儿园劳动合同制教师59名（二）',url:'https://www.shanxiangjiaoyu.com/zixun/20260506/86802.html',type:'劳动合同制',tags:['🔥 报名中'],deadline:'5月8日-13日报名',source:'山香教育'},
-  { city:'温州',district:'鹿城区',title:'温州市鹿城区2025年招聘教师30名',url:'http://www.yingyudengji.com/zhejiang/news/news_7.html',type:'事业编',tags:['2025公告'],deadline:'已截止',source:'温州教师招聘网'},
+  // ══ 温州 ══
+  { city:'温州',district:'龙港市',title:'龙港市面向社会公开招聘公办幼儿园劳动合同制教师59名（二）',url:'https://www.shanxiangjiaoyu.com/zixun/20260506/86802.html',type:'劳动合同制',tags:['🔥报名中'],deadline:'5月8日9时-13日17时报名',source:'山香教育'},
 
-  // ── 金华（已核实）──
-  { city:'金华',district:'义乌市',title:'义乌市教育系统2025年公开招聘教师（幼儿园40名）',url:'https://www.yingyudengji.com/zhejiang/article/13172.html',type:'事业编/备案制',tags:['共42人含幼教'],deadline:'已截止',source:'教师招聘网'},
+  // ══ 金华 ══
+  { city:'金华',district:'义乌市',title:'义乌市教育系统2025年公开招聘教师（幼儿园40名）',url:'https://www.yingyudengji.com/zhejiang/article/13172.html',type:'事业编/备案制',tags:['已截止'],deadline:'已截止',source:'教师招聘网'},
 
-  // ── 台州（已核实）──
-  { city:'台州',district:'椒江区',title:'椒江区招聘中小学、幼儿园事业编制教师66名',url:'http://www.jrzhufu.com/article/99377.html',type:'事业编',tags:['🆕','🔥 报名中'],deadline:'5月8日-13日报名',source:'台州教师招聘网'},
-  { city:'台州',district:'路桥区',title:'路桥区教育局招聘公办幼儿园劳动合同制教师10名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87244.html',type:'劳动合同制',tags:['🆕 报名中'],deadline:'5月11日-15日报名',source:'山香教育'},
-  { city:'台州',district:'温岭市',title:'温岭市公办幼儿园招聘劳动合同制教职工8名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87129.html',type:'劳动合同制',tags:['🆕 报名中'],deadline:'5月8日-15日报名',source:'山香教育'},
+  // ══ 台州 ══
+  { city:'台州',district:'椒江区',title:'椒江区2026年公开招聘中小学、幼儿园事业编制教师66名（一）',url:'http://www.jrzhufu.com/article/99377.html',type:'事业编',tags:['🔥报名中'],deadline:'5月8日9时-13日17时报名',source:'台州教师招聘网'},
+  { city:'台州',district:'路桥区',title:'路桥区教育局2026年公开招聘公办幼儿园劳动合同制教师10名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87244.html',type:'劳动合同制',tags:['🆕报名中'],deadline:'5月11日-15日报名',source:'山香教育'},
+  { city:'台州',district:'温岭市',title:'温岭市公办幼儿园2026年公开招聘劳动合同制教职工8名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87129.html',type:'劳动合同制',tags:['🆕报名中'],deadline:'5月8日9时-15日17时报名',source:'山香教育'},
 
-  // ── 杭州（部分已核实）──
-  { city:'杭州',district:'萧山区',title:'杭州市萧山区2025年招聘幼儿园合同制教师',url:'http://www.jrzhufu.com/zhejiang/',type:'合同制',tags:[],deadline:'2025年',source:'教师招聘网'},
-
-  // ── 绍兴（已核实）──
-  { city:'绍兴',district:'上虞区',title:'2026年上虞区教师招聘18名公告（含幼教）',url:'http://www.jrzhufu.com/zhejiang/',type:'事业编',tags:['🆕 含幼教'],deadline:'2026年4月发布',source:'教师招聘网'},
-
-  // ── 衢州（已核实）──
-  { city:'衢州',district:'柯城区',title:'柯城区教育局2026年教师招聘24名（西南大学专场）',url:'http://www.jrzhufu.com/article/98336.html',type:'事业编',tags:['应届生'],deadline:'2026年4月发布',source:'教师招聘网'},
-  { city:'衢州',district:'衢江区',title:'衢江区2025年事业编制教师招聘13名公告',url:'http://www.yingyudengji.com/zhejiang/news/news_9.html',type:'事业编',tags:[],deadline:'2025年',source:'衢州教师招聘网'},
+  // ══ 衢州 ══
+  { city:'衢州',district:'柯城区',title:'柯城区教育局2026年教师招聘24名（西南大学专场，应届生）',url:'http://www.jrzhufu.com/article/98336.html',type:'事业编',tags:['应届生'],deadline:'2026年4月发布',source:'教师招聘网'},
+  { city:'衢州',district:'衢江区',title:'衢江区2025年事业编制教师招聘13名',url:'http://www.yingyudengji.com/zhejiang/news/news_9.html',type:'事业编',tags:['2025年'],deadline:'已截止',source:'衢州教师招聘网'},
 ];
 </script>
 <script>
-// 渲染和筛选逻辑（直接在HTML内）
-const CITY_ORDER = ['丽水','温州','金华','台州','杭州','绍兴','衢州'];
-const CITY_ICONS = {'丽水':'🌄','温州':'🌊','金华':'🏯','台州':'🌅','杭州':'🌊','宁波':'🌊','绍兴':'🏛️','衢州':'🏔️'};
-const CITY_MAP = {'lishui':'丽水','wenzhou':'温州','jinhua':'金华','taizhou':'台州','hangzhou':'杭州','ningbo':'宁波','shaoxing':'绍兴','quzhou':'衢州'};
+const CITY_ORDER = ['丽水','温州','金华','台州','衢州'];
+const CITY_ICONS = {'丽水':'🌄','温州':'🌊','金华':'🏯','台州':'🌅','衢州':'🏔️'};
+const CITY_MAP = {'lishui':'丽水','wenzhou':'温州','jinhua':'金华','taizhou':'台州','hangzhou':'','ningbo':'','shaoxing':'','quzhou':'衢州'};
 
 function render(){
   const c=document.getElementById('jobsContainer'); let h='', t=0;
@@ -209,7 +202,7 @@ document.querySelectorAll('.city-tab').forEach(t=>{
     this.classList.add('active');
     const k=this.getAttribute('href').slice(1);
     if(k==='all'){document.querySelectorAll('.city-section').forEach(s=>s.style.display='block');document.getElementById('totalCount').textContent=JOBS.length;}
-    else{const c=CITY_MAP[k]||k;document.querySelectorAll('.city-section').forEach(s=>s.style.display=s.dataset.city===c?'block':'none');document.getElementById('totalCount').textContent=JOBS.filter(j=>j.city===c).length;}
+    else{const c=CITY_MAP[k];if(c){document.querySelectorAll('.city-section').forEach(s=>s.style.display=s.dataset.city===c?'block':'none');document.getElementById('totalCount').textContent=JOBS.filter(j=>j.city===c).length;}}
   });
 });
 </script>
