@@ -195,41 +195,41 @@
 <script>
 const JOBS = [
   // ══ 丽水 ══
-  { city:'丽水',district:'松阳县',title:'松阳县2026年公开招聘中小学、幼儿园教师（一）10名',url:'https://www.sohu.com/a/1019187600_121106994',type:'事业编',tags:['🆕报名中'],deadline:'5月12日截止',source:'松阳县教育局公告'},
-  { city:'丽水',district:'龙泉市',title:'龙泉市2026年公开招聘教师11名（含幼教岗位）',url:'https://www.bianzhia.com/zhejiang/lishui/20260508/248687.html',type:'事业编',tags:['报名中'],deadline:'5月（网上报名）',source:'编制招聘网'},
+  { city:'丽水',district:'松阳县',title:'松阳县2026年公开招聘中小学、幼儿园教师10名',url:'https://www.sohu.com/a/1019187600_121106994',type:'事业编',edu:'本科起（学前2学位不限）',tags:['🆕报名中'],deadline:'5月12日截止',source:'松阳县教育局公告'},
+  { city:'丽水',district:'龙泉市',title:'龙泉市2026年公开招聘教师11名（含幼教岗位）',url:'https://www.bianzhia.com/zhejiang/lishui/20260508/248687.html',type:'事业编',edu:'本科起',tags:['报名中'],deadline:'5月9日-15日',source:'编制招聘网'},
 
   // ══ 温州 ══
-  { city:'温州',district:'龙港市',title:'龙港市招聘公办幼儿园劳动合同制教师59名（二）',url:'https://www.shanxiangjiaoyu.com/zixun/20260506/86802.html',type:'劳动合同制',tags:['🔥报名中'],deadline:'5月8日-13日',source:'山香教育'},
+  { city:'温州',district:'龙港市',title:'龙港市招聘公办幼儿园劳动合同制教师59名（二）',url:'https://www.shanxiangjiaoyu.com/zixun/20260506/86802.html',type:'劳动合同制',edu:'大专起（具体见岗位表）',tags:['🔥报名中'],deadline:'5月8日-13日',source:'山香教育'},
 
   // ══ 金华 ══
-  { city:'金华',district:'义乌市',title:'义乌市教育系统2025年公开招聘教师（幼儿园40名）',url:'https://www.yingyudengji.com/zhejiang/article/13172.html',type:'事业编/备案制',tags:['已截止'],deadline:'已截止',source:'教师招聘网'},
+  { city:'金华',district:'义乌市',title:'义乌市教育系统2025年公开招聘教师（幼儿园40名）',url:'https://www.yingyudengji.com/zhejiang/article/13172.html',type:'事业编/备案制',edu:'本科起',tags:['已截止'],deadline:'已截止',source:'教师招聘网'},
 
   // ══ 台州 ══
-  { city:'台州',district:'椒江区',title:'椒江区2026年招聘中小学、幼儿园事业编制教师66名（一）',url:'http://www.jrzhufu.com/article/99377.html',type:'事业编',tags:['🔥报名中'],deadline:'5月8日-13日',source:'台州教师招聘网'},
-  { city:'台州',district:'路桥区',title:'路桥区教育局招聘公办幼儿园劳动合同制教师10名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87244.html',type:'劳动合同制',tags:['🆕报名中'],deadline:'5月11日-15日',source:'山香教育'},
-  { city:'台州',district:'温岭市',title:'温岭市公办幼儿园招聘劳动合同制教职工8名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87129.html',type:'劳动合同制',tags:['🆕报名中'],deadline:'5月8日-15日',source:'山香教育'},
+  { city:'台州',district:'椒江区',title:'椒江区2026年招聘中小学、幼儿园事业编制教师66名',url:'http://www.jrzhufu.com/article/99377.html',type:'事业编',edu:'本科起',tags:['🔥报名中'],deadline:'5月8日-13日',source:'台州教师招聘网'},
+  { city:'台州',district:'路桥区',title:'路桥区教育局招聘公办幼儿园劳动合同制教师10名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87244.html',type:'劳动合同制',edu:'本科起（放宽见附件）',tags:['🆕报名中'],deadline:'5月11日-15日',source:'山香教育'},
+  { city:'台州',district:'温岭市',title:'温岭市公办幼儿园招聘劳动合同制教职工8名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87129.html',type:'劳动合同制',edu:'本科起（具体见附件）',tags:['🆕报名中'],deadline:'5月8日-15日',source:'山香教育'},
 
-  // ══ 绍兴 ══（已验证）
-  { city:'绍兴',district:'柯桥区',title:'柯桥区教体系统2026年事业编制新教师招聘70名（含幼教）',url:'http://yingyudengji.com/jiaoshi/article/86149.html',type:'事业编',tags:['🆕含幼教'],deadline:'2026年4月发布',source:'教师招聘网'},
-  { city:'绍兴',district:'上虞区',title:'上虞区2026年事业编制教师招聘18名',url:'http://www.jrzhufu.com/zhejiang/article/13254.html',type:'事业编',tags:[],deadline:'2026年4月发布',source:'教师招聘网'},
-  { city:'绍兴',district:'越城区',title:'越城区2026年新教师招聘（含幼儿园岗位）',url:'https://honglian.org/Newsview.aspx?Aid=12718',type:'事业编',tags:[],deadline:'2026年4月发布',source:'弘连教育转载'},
-  { city:'绍兴',district:'新昌县',title:'新昌县教体系统2026年校园公开招聘教师7名',url:'https://www.xuexinjiaoshi.com/jiaoshi/show.php?itemid=32015',type:'事业编',tags:['校园招聘'],deadline:'2026年4月发布',source:'学信教师'},
+  // ══ 绍兴 ══
+  { city:'绍兴',district:'柯桥区',title:'柯桥区教体系统2026年事业编制新教师招聘70名（含幼教）',url:'http://yingyudengji.com/jiaoshi/article/86149.html',type:'事业编',edu:'本科起',tags:['🆕含幼教'],deadline:'2026年4月发布',source:'教师招聘网'},
+  { city:'绍兴',district:'上虞区',title:'上虞区2026年事业编制教师招聘18名（不限户籍）',url:'http://www.jrzhufu.com/zhejiang/article/13254.html',type:'事业编',edu:'本科起',tags:[],deadline:'2026年4月发布',source:'教师招聘网'},
+  { city:'绍兴',district:'越城区',title:'越城区2026年新教师招聘（含幼儿园岗位）',url:'https://honglian.org/Newsview.aspx?Aid=12718',type:'事业编',edu:'本科起',tags:[],deadline:'2026年4月发布',source:'弘连教育'},
+  { city:'绍兴',district:'新昌县',title:'新昌县教体系统2026年校园公开招聘教师7名',url:'https://www.xuexinjiaoshi.com/jiaoshi/show.php?itemid=32015',type:'事业编',edu:'本科起',tags:['校园招聘'],deadline:'2026年4月发布',source:'学信教师'},
 
-  // ══ 杭州 ══（已验证）
-  { city:'杭州',district:'西湖区',title:'西湖区枫华府第学前教育集团招聘幼儿教师（非事业）',url:'https://baokao.offcn.com/ggcx/gg/202607.html',type:'非事业编',tags:['🆕招满即止'],deadline:'至2026年6月',source:'中公教育'},
-  { city:'杭州',district:'西湖区',title:'西湖区翠苑第五幼儿园和新城幼儿园招聘幼儿教师（非事业）',url:'https://baokao.offcn.com/index.php/ggcx/gg/170932.html',type:'非事业编',tags:['招满即止'],deadline:'招满即止',source:'中公教育'},
-  { city:'杭州',district:'钱塘区',title:'钱塘区云水苑幼儿园招聘代课教师及实习教师',url:'http://www.chinahzrc.com/sydwzpDetails_E4DBBCD39FA4EF07.shtml',type:'代课/实习',tags:['公办省一级园'],deadline:'招满即止',source:'今日招聘网'},
-  { city:'杭州',district:'萧山区',title:'萧山区2026年招聘幼儿园合同制教师132名',url:'http://hz.bendibao.com/job/20221011/131540.shtm',type:'合同制',tags:['🔥132人','已开考'],deadline:'2026年4月已开考',source:'杭州本地宝'},
-  { city:'杭州',district:'西湖区',title:'西湖区闻裕顺学前教育集团招聘幼儿教师（非事业）',url:'https://www.gaoxiaojob.com/company/detail/16338.html',type:'非事业编',tags:[],deadline:'已下线',source:'高校人才网'},
+  // ══ 杭州 ══
+  { city:'杭州',district:'西湖区',title:'西湖区枫华府第学前教育集团招聘幼儿教师（非事业）',url:'https://baokao.offcn.com/ggcx/gg/202607.html',type:'非事业编',edu:'本科起（全日制优先）',tags:['🆕招满即止'],deadline:'至2026年6月',source:'中公教育'},
+  { city:'杭州',district:'西湖区',title:'西湖区翠苑第五幼儿园和新城幼儿园招聘幼儿教师（非事业）',url:'https://baokao.offcn.com/index.php/ggcx/gg/170932.html',type:'非事业编',edu:'本科起',tags:['招满即止'],deadline:'招满即止',source:'中公教育'},
+  { city:'杭州',district:'钱塘区',title:'钱塘区云水苑幼儿园招聘代课教师及实习教师',url:'http://www.chinahzrc.com/sydwzpDetails_E4DBBCD39FA4EF07.shtml',type:'代课/实习',edu:'大专起（代课）本科起（实习）',tags:['公办省一级园'],deadline:'招满即止',source:'今日招聘网'},
+  { city:'杭州',district:'萧山区',title:'萧山区2026年招聘幼儿园合同制教师132名',url:'http://hz.bendibao.com/job/20221011/131540.shtm',type:'合同制',edu:'本科起',tags:['🔥132人','已开考'],deadline:'2026年4月已开考',source:'杭州本地宝'},
+  { city:'杭州',district:'西湖区',title:'西湖区闻裕顺学前教育集团招聘幼儿教师（非事业）',url:'https://www.gaoxiaojob.com/company/detail/16338.html',type:'非事业编',edu:'本科起',tags:[],deadline:'已下线',source:'高校人才网'},
 
-  // ══ 宁波 ══（已验证）
-  { city:'宁波',district:'海曙区',title:'海曙区教育局2026学年"专曙优师"教育人才招聘（第二批）',url:'http://www.guokai-edu.cn/jszhaokao.html',type:'事业编',tags:['含幼教'],deadline:'5月8日-9日现场确认',source:'宁波教师招聘'},
-  { city:'宁波',district:'市直',title:'宁波市宝韵音乐幼儿园2026年公开招聘2人',url:'https://m.huatu.com/info/a/sydw/zj/ningbo/',type:'事业编',tags:['音乐特色'],deadline:'2026年3月发布',source:'华图教育'},
-  { city:'宁波',district:'市直',title:'宁波幼儿师范高等专科学校招聘事业编制4人',url:'https://m.huatu.com/sydw/2026/0311/2853485.html',type:'事业编',tags:['高校'],deadline:'2026年3月发布',source:'华图教育'},
+  // ══ 宁波 ══
+  { city:'宁波',district:'海曙区',title:'海曙区教育局2026学年"专曙优师"教育人才招聘（第二批）',url:'http://www.guokai-edu.cn/jszhaokao.html',type:'事业编',edu:'本科起（专曙优师）',tags:['含幼教'],deadline:'5月8日-9日现场确认',source:'宁波教师招聘'},
+  { city:'宁波',district:'市直',title:'宁波市宝韵音乐幼儿园2026年公开招聘2人',url:'https://m.huatu.com/info/a/sydw/zj/ningbo/',type:'事业编',edu:'本科起',tags:['音乐特色'],deadline:'2026年3月发布',source:'华图教育'},
+  { city:'宁波',district:'市直',title:'宁波幼儿师范高等专科学校招聘事业编制4人',url:'https://m.huatu.com/sydw/2026/0311/2853485.html',type:'事业编',edu:'硕士/本科',tags:['高校'],deadline:'2026年3月发布',source:'华图教育'},
 
   // ══ 衢州 ══
-  { city:'衢州',district:'柯城区',title:'柯城区教育局2026年教师招聘24名（西南大学专场应届生）',url:'http://www.jrzhufu.com/article/98336.html',type:'事业编',tags:['应届生'],deadline:'2026年4月发布',source:'教师招聘网'},
-  { city:'衢州',district:'衢江区',title:'衢江区2025年事业编制教师招聘13名',url:'http://www.yingyudengji.com/zhejiang/news/news_9.html',type:'事业编',tags:['2025年'],deadline:'已截止',source:'衢州教师招聘网'},
+  { city:'衢州',district:'柯城区',title:'柯城区教育局2026年教师招聘24名（西南大学专场）',url:'http://www.jrzhufu.com/article/98336.html',type:'事业编',edu:'本科起',tags:['应届生'],deadline:'2026年4月发布',source:'教师招聘网'},
+  { city:'衢州',district:'衢江区',title:'衢江区2025年事业编制教师招聘13名',url:'http://www.yingyudengji.com/zhejiang/news/news_9.html',type:'事业编',edu:'本科起',tags:['2025年'],deadline:'已截止',source:'衢州教师招聘网'},
 ];
 const CITY_ORDER = ['丽水','温州','金华','台州','绍兴','杭州','宁波','衢州'];
 const CITY_ORDER = ['丽水','温州','金华','台州','衢州'];
@@ -242,7 +242,7 @@ function render(){
     const js=JOBS.filter(j=>j.city===city); if(!js.length)return; t+=js.length;
     h+=`<div class="city-section" data-city="${city}"><div class="city-heading"><span class="city-icon">${CITY_ICONS[city]||'📍'}</span><span>${city}</span><span class="city-count">${js.length}条</span></div>`;
     js.forEach(j=>{
-      h+=`<div class="job-card"><div class="job-district">📍 ${j.district}</div><div class="job-title"><a href="${j.url}" target="_blank">${j.title}</a></div><div class="meta"><span>${j.type}</span>${j.tags?j.tags.map(t=>{const c=t.includes('🆕')?'tag-new':t.includes('🔥')?'tag-hot':'';return `<span class="${c}">${t}</span>`}).join(''):''}</div>${j.deadline?`<div class="deadline${(j.deadline.includes('截止')||j.deadline.includes('结束'))?' passed':''}">⏰ ${j.deadline}</div>`:''}<div class="source"><span>来源：${j.source}</span><a href="${j.url}" target="_blank">查看原文 →</a></div></div>`;
+      h+=`<div class="job-card"><div class="job-district">📍 ${j.district}</div><div class="job-title"><a href="${j.url}" target="_blank">${j.title}</a></div><div class="meta"><span>${j.type}</span>${j.edu?`<span>🎓 ${j.edu}</span>`:''}${j.tags?j.tags.map(t=>{const c=t.includes('🆕')?'tag-new':t.includes('🔥')?'tag-hot':'';return `<span class="${c}">${t}</span>`}).join(''):''}</div>${j.deadline?`<div class="deadline${(j.deadline.includes('截止')||j.deadline.includes('结束'))?' passed':''}">⏰ ${j.deadline}</div>`:''}<div class="source"><span>来源：${j.source}</span><a href="${j.url}" target="_blank">查看原文 →</a></div></div>`;
     });
     h+=`</div>`;
   });
