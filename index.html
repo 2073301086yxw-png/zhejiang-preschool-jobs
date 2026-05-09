@@ -341,13 +341,13 @@
 
 <div class="city-tabs" id="cityTabs">
   <a class="city-tab all active" href="#all">📍 全部</a>
-  <a class="city-tab" href="#hangzhou">杭州</a>
-  <a class="city-tab" href="#ningbo">宁波</a>
+  <a class="city-tab" href="#lishui">丽水</a>
   <a class="city-tab" href="#wenzhou">温州</a>
-  <a class="city-tab" href="#shaoxing">绍兴</a>
   <a class="city-tab" href="#jinhua">金华</a>
   <a class="city-tab" href="#taizhou">台州</a>
-  <a class="city-tab" href="#lishui">丽水</a>
+  <a class="city-tab" href="#hangzhou">杭州</a>
+  <a class="city-tab" href="#ningbo">宁波</a>
+  <a class="city-tab" href="#shaoxing">绍兴</a>
   <a class="city-tab" href="#quzhou">衢州</a>
 </div>
 
@@ -603,7 +603,7 @@ const JOBS = [
 ];
 
 // ===== 渲染 =====
-const CITY_ORDER = ['杭州', '宁波', '温州', '绍兴', '金华', '台州', '丽水', '衢州'];
+const CITY_ORDER = ['丽水', '温州', '金华', '台州', '杭州', '宁波', '绍兴', '衢州'];
 const CITY_ICONS = { '杭州': '🌊', '宁波': '🌊', '温州': '🌊', '绍兴': '🏛️', '金华': '🏯', '台州': '🌅', '丽水': '🌄', '衢州': '🏔️' };
 
 function render() {
@@ -666,13 +666,13 @@ render();
 // ===== 城市筛选 =====
 // 城市名映射
 const CITY_MAP = {
-  'hangzhou': '杭州',
-  'ningbo': '宁波',
+  'lishui': '丽水',
   'wenzhou': '温州',
-  'shaoxing': '绍兴',
   'jinhua': '金华',
   'taizhou': '台州',
-  'lishui': '丽水',
+  'hangzhou': '杭州',
+  'ningbo': '宁波',
+  'shaoxing': '绍兴',
   'quzhou': '衢州'
 };
 
