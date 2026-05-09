@@ -19,321 +19,102 @@
     --tag-bg: #f0e6dc;
     --tag-text: #8b6f56;
     --urgent: #d4534a;
-    --title-font: "Georgia", "Noto Serif SC", serif;
-    --body-font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --title-font: "Georgia","Noto Serif SC",serif;
+    --body-font: -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    font-family: var(--body-font);
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    padding-bottom: 60px;
+    font-family:var(--body-font); background:var(--bg); color:var(--text);
+    line-height:1.7; -webkit-font-smoothing:antialiased; padding-bottom:60px;
   }
-
   .header {
-    background: linear-gradient(135deg, #f0e6dc 0%, #faf7f2 100%);
-    padding: 48px 20px 36px;
-    text-align: center;
-    border-bottom: 1px solid var(--border);
+    background:linear-gradient(135deg,#f0e6dc 0%,#faf7f2 100%);
+    padding:48px 20px 36px; text-align:center; border-bottom:1px solid var(--border);
   }
-
   .header h1 {
-    font-family: var(--title-font);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+    font-family:var(--title-font); font-size:28px; font-weight:700; color:var(--text);
+    letter-spacing:2px; margin-bottom:8px;
   }
-
-  .header .subtitle {
-    font-size: 14px;
-    color: var(--text-secondary);
-    letter-spacing: 1px;
-  }
-
+  .header .subtitle { font-size:14px; color:var(--text-secondary); letter-spacing:1px; }
   .header .update-info {
-    margin-top: 12px;
-    font-size: 12px;
-    color: var(--text-secondary);
-    background: rgba(255,255,255,0.6);
-    display: inline-block;
-    padding: 4px 14px;
-    border-radius: 20px;
+    margin-top:12px; font-size:12px; color:var(--text-secondary);
+    background:rgba(255,255,255,0.6); display:inline-block; padding:4px 14px; border-radius:20px;
   }
-
   .city-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 16px 20px;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    background: var(--bg);
-    z-index: 10;
-    border-bottom: 1px solid var(--border);
+    display:flex; flex-wrap:wrap; gap:8px; padding:16px 20px;
+    justify-content:center; position:sticky; top:0; background:var(--bg);
+    z-index:10; border-bottom:1px solid var(--border);
   }
-
   .city-tab {
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-secondary);
-    text-decoration: none;
+    padding:6px 16px; border-radius:20px; font-size:13px; font-weight:500;
+    cursor:pointer; transition:all .2s; border:1px solid var(--border);
+    background:transparent; color:var(--text-secondary); text-decoration:none;
   }
-
-  .city-tab:hover,
-  .city-tab.active {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-  }
-
-  .city-tab.all {
-    background: var(--accent-light);
-    color: var(--tag-text);
-    border-color: transparent;
-  }
-
+  .city-tab:hover,.city-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
   .stats-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    font-size: 13px;
-    color: var(--text-secondary);
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 20px; font-size:13px; color:var(--text-secondary);
   }
-
-  .stats-bar .count {
-    font-weight: 600;
-    color: var(--accent);
-  }
-
-  .jobs-container {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0 16px;
-  }
-
-  .city-section {
-    margin-bottom: 8px;
-  }
-
+  .stats-bar .count { font-weight:600; color:var(--accent); }
+  .jobs-container { max-width:640px; margin:0 auto; padding:0 16px; }
+  .city-section { margin-bottom:8px; }
   .city-heading {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 4px 12px;
-    font-family: var(--title-font);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text);
-    border-bottom: 2px solid var(--accent-light);
-    margin-bottom: 12px;
+    display:flex; align-items:center; gap:10px;
+    padding:16px 4px 12px; font-family:var(--title-font); font-size:18px;
+    font-weight:700; color:var(--text); border-bottom:2px solid var(--accent-light); margin-bottom:12px;
   }
-
   .city-heading .city-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--accent-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
+    width:28px; height:28px; border-radius:50%; background:var(--accent-light);
+    display:flex; align-items:center; justify-content:center; font-size:14px;
   }
-
-  .city-heading .city-count {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--text-secondary);
-    margin-left: auto;
-  }
-
+  .city-heading .city-count { font-size:13px; font-weight:400; color:var(--text-secondary); margin-left:auto; }
   .job-card {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 16px 18px;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    transition: all 0.2s;
-    border: 1px solid var(--border);
+    background:var(--card); border-radius:12px; padding:16px 18px; margin-bottom:10px;
+    box-shadow:0 1px 3px rgba(0,0,0,.04); transition:all .2s; border:1px solid var(--border);
   }
-
-  .job-card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-color: var(--accent);
-  }
-
-  .job-card .job-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.4;
-    margin-bottom: 6px;
-  }
-
-  .job-card .job-title a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .job-card .job-title a:hover {
-    color: var(--accent);
-  }
-
-  .job-card .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px;
-    font-size: 12px;
-  }
-
+  .job-card:hover { box-shadow:0 2px 8px rgba(0,0,0,.06); border-color:var(--accent); }
+  .job-card .job-district { font-size:12px; font-weight:500; color:var(--accent); margin-bottom:4px; }
+  .job-card .job-title { font-size:16px; font-weight:600; color:var(--text); line-height:1.4; margin-bottom:6px; }
+  .job-card .job-title a { color:inherit; text-decoration:none; }
+  .job-card .job-title a:hover { color:var(--accent); }
+  .job-card .meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; font-size:12px; }
   .job-card .meta span {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 4px;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    font-size: 12px;
+    display:inline-block; padding:2px 10px; border-radius:4px; background:var(--tag-bg);
+    color:var(--tag-text); font-size:12px;
   }
-
-  .job-card .meta .type-public {
-    background: #e8f0e0;
-    color: #5f7a4a;
-  }
-
-  .job-card .meta .type-contract {
-    background: #e0e8f0;
-    color: #4a6a8a;
-  }
-
-  .job-card .meta .tag-hot {
-    background: #fce8e0;
-    color: var(--urgent);
-  }
-
-  .job-card .meta .tag-new {
-    background: #e0f0e8;
-    color: #3a7a5a;
-  }
-
-  .job-card .deadline {
-    font-size: 12px;
-    color: var(--urgent);
-    margin-top: 6px;
-  }
-
-  .job-card .deadline.passed {
-    color: var(--text-secondary);
-  }
-
+  .job-card .meta .tag-hot { background:#fce8e0; color:var(--urgent); }
+  .job-card .meta .tag-new { background:#e0f0e8; color:#3a7a5a; }
+  .job-card .deadline { font-size:12px; color:var(--urgent); margin-top:6px; }
+  .job-card .deadline.passed { color:var(--text-secondary); }
   .job-card .source {
-    font-size: 11px;
-    color: var(--text-secondary);
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
+    font-size:11px; color:var(--text-secondary); margin-top:8px;
+    padding-top:8px; border-top:1px solid var(--border); display:flex; justify-content:space-between;
   }
-
-  .job-card .source a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
+  .job-card .source a { color:var(--accent); text-decoration:none; font-weight:500; }
+  .footer { text-align:center; padding:32px 20px; font-size:12px; color:var(--text-secondary); border-top:1px solid var(--border); margin-top:32px; }
+  .faq { max-width:640px; margin:24px auto; padding:0 16px; }
+  .faq summary { font-size:13px; color:var(--text-secondary); cursor:pointer; padding:8px 0; }
+  .faq .tips { font-size:13px; color:var(--text-secondary); line-height:1.8; padding:8px 0; }
+  .faq .tips li { list-style:none; padding:2px 0; }
+  .faq .tips li::before { content:"• "; color:var(--accent); }
+  @media (prefers-color-scheme:dark) {
+    :root { --bg:#faf7f2; --card:#fff; --text:#2d2a26; --text-secondary:#8a7e72; }
   }
-
-  .empty-state {
-    text-align: center;
-    padding: 48px 20px;
-    color: var(--text-secondary);
-  }
-
-  .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
-  .empty-state p { font-size: 14px; }
-
-  .footer {
-    text-align: center;
-    padding: 32px 20px;
-    font-size: 12px;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border);
-    margin-top: 32px;
-  }
-
-  .footer a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .faq {
-    max-width: 640px;
-    margin: 24px auto;
-    padding: 0 16px;
-  }
-
-  .faq summary {
-    font-size: 13px;
-    color: var(--text-secondary);
-    cursor: pointer;
-    padding: 8px 0;
-  }
-
-  .faq .tips {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    padding: 8px 0;
-  }
-
-  .faq .tips li {
-    list-style: none;
-    padding: 2px 0;
-  }
-
-  .faq .tips li::before {
-    content: "• ";
-    color: var(--accent);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #faf7f2;
-      --card: #ffffff;
-      --text: #2d2a26;
-      --text-secondary: #8a7e72;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .header { padding: 36px 16px 28px; }
-    .header h1 { font-size: 22px; }
-    .city-tabs { gap: 6px; padding: 12px 12px; }
-    .city-tab { padding: 5px 12px; font-size: 12px; }
-    .job-card { padding: 14px 14px; }
+  @media (max-width:480px) {
+    .header { padding:36px 16px 28px; }
+    .header h1 { font-size:22px; }
+    .city-tabs { gap:6px; padding:12px; }
+    .city-tab { padding:5px 12px; font-size:12px; }
+    .job-card { padding:14px; }
   }
 </style>
 </head>
 <body>
-
 <div class="header">
   <h1>🎯 浙江幼师招聘信息</h1>
-  <p class="subtitle">每日更新 · 覆盖浙江8市 · 学前教育专属</p>
-  <p class="update-info">📅 更新于 2026年5月9日 <span style="font-size:11px;opacity:0.6">v3</span></p>
+  <p class="subtitle">每日更新 · 覆盖8市60+区县 · 学前教育专属</p>
+  <p class="update-info">📅 更新于 2026年5月9日 v4</p>
 </div>
-
 <div class="city-tabs" id="cityTabs">
   <a class="city-tab all active" href="#all">📍 全部</a>
   <a class="city-tab" href="#lishui">丽水</a>
@@ -345,417 +126,84 @@
   <a class="city-tab" href="#shaoxing">绍兴</a>
   <a class="city-tab" href="#quzhou">衢州</a>
 </div>
-
 <div class="stats-bar">
   <span>共 <span class="count" id="totalCount">0</span> 条招聘信息</span>
   <span style="font-size:12px;color:var(--text-secondary)">点击标题查看详情</span>
 </div>
-
-<div class="jobs-container" id="jobsContainer">
-</div>
-
+<div class="jobs-container" id="jobsContainer"></div>
 <div class="faq">
   <details>
     <summary>📖 使用说明</summary>
     <ul class="tips">
       <li>每天自动更新最新幼师/学前教育招聘信息</li>
-      <li>点击招聘标题可跳转到官方公告原文</li>
-      <li>信息来源：各市人社局、教育局官网、高校人才网、招聘考试网等</li>
-      <li>🆕 = 本周新发布 &nbsp; 🔥 = 热门岗位（报名人数多）</li>
-      <li>📮 如需订阅推送，请联系夏音</li>
+      <li>点击标题可跳转到官方公告原文</li>
+      <li>信息来源：各市县人社局、教育局官网、高校人才网等</li>
+      <li>🆕=本周新发布 &nbsp; 🔥=热门岗位 &nbsp; 右上角城市标签可筛选</li>
     </ul>
   </details>
 </div>
-
 <div class="footer">
   <p>由 <strong>夏音 🎯</strong> 为相文的学生们维护</p>
   <p style="margin-top:4px;">每日自动搜集 · 浙江8市学前教育招聘信息</p>
-  <p style="margin-top:8px;">📱 如果显示旧版，请关闭页面重新打开</p>
 </div>
-
 <script>
 const JOBS = [
-  // ── 丽水 ──
-  {
-    id: 'ls01',
-    city: '丽水',
-    title: '龙泉市2026年公开招聘教师11名（含幼教）',
-    url: 'https://www.bianzhia.com/zhejiang/lishui/20260508/248687.html',
-    type: '事业编',
-    tags: ['🆕 新发布', '含幼教'],
-    deadline: '2026年5月（网上报名，浙江省通用招聘网报平台）',
-    source: '龙泉市教育局',
-    date: '2026-05'
-  },
-  {
-    id: 'ls02',
-    city: '丽水',
-    title: '松阳县教育系统招聘中小学、幼儿园教师10名',
-    url: 'https://www.xuexinjiaoshi.com/jiaoshi/list.php?catid=10',
-    type: '事业编',
-    tags: ['🆕 新发布', '学前教育岗'],
-    deadline: '2026年5月（网上报名）',
-    source: '松阳县教育局',
-    date: '2026-05'
-  },
-  {
-    id: 'ls03',
-    city: '丽水',
-    title: '缙云县2026年新教师招聘（含幼教岗位）',
-    url: 'http://www.yingyudengji.com/zhejiang/news/news_109.html',
-    type: '事业编',
-    tags: ['含幼儿园'],
-    deadline: '具体见公告',
-    source: '缙云县教育局',
-    date: '2026-04'
-  },
-
-  // ── 温州 ──
-  {
-    id: 'wz01',
-    city: '温州',
-    title: '龙港市招聘公办幼儿园劳动合同制教师59名（二）',
-    url: 'https://www.shanxiangjiaoyu.com/zixun/20260506/86802.html',
-    type: '劳动合同制',
-    tags: ['🔥 热门', '🆕 正在报名'],
-    deadline: '2026年5月8日-13日报名',
-    source: '龙港市社会事业局',
-    date: '2026-05'
-  },
-  {
-    id: 'wz02',
-    city: '温州',
-    title: '温州市瓯海区面向全国引进教育人才（含幼教）',
-    url: 'http://www.jrzhufu.com/zhejiang/article/13233.html',
-    type: '人才引进',
-    tags: ['含幼儿园', '骨干教师'],
-    deadline: '具体见公告',
-    source: '瓯海区教育局',
-    date: '2026-04'
-  },
-  {
-    id: 'wz03',
-    city: '温州',
-    title: '龙湾区天河第二幼儿园招聘非编专任教师',
-    url: 'https://job.wzu.edu.cn/news/view/aid/158766/tag/jszp',
-    type: '非事业编',
-    tags: ['公办园', '大专起'],
-    deadline: '招满即止',
-    source: '温州大学就业网',
-    date: '2026-03'
-  },
-
-  // ── 金华 ──
-  {
-    id: 'jh01',
-    city: '金华',
-    title: '义乌市教育系统公开招聘教师（幼儿园40名）',
-    url: 'https://m.jh.bendibao.com/job/30113.shtm',
-    type: '事业编/备案制',
-    tags: ['事业编2名', '备案制38名'],
-    deadline: '已截止（2026年3月发布）',
-    source: '义乌市教育局',
-    date: '2026-03'
-  },
-  {
-    id: 'jh02',
-    city: '金华',
-    title: '金华市金东区招聘幼儿园合同制教师30名',
-    url: 'http://www.jhparc.com/sydwzpDetails_A9FBFCE7796C589E.shtml',
-    type: '合同制',
-    tags: ['🆕', '现场报名'],
-    deadline: '2026年4月发布（现场报名）',
-    source: '金东区教体局',
-    date: '2026-04'
-  },
-  {
-    id: 'jh03',
-    city: '金华',
-    title: '永康市机关幼儿园招聘劳动合同制教师6名',
-    url: 'http://www.jhlxrc.com/sydwzpDetails_E289C2316FB47477.shtml',
-    type: '劳动合同制',
-    tags: ['机关幼儿园'],
-    deadline: '2026年3月发布',
-    source: '永康市机关事务服务中心',
-    date: '2026-03'
-  },
-
-  // ── 台州 ──
-  {
-    id: 'tz01',
-    city: '台州',
-    title: '椒江区招聘中小学、幼儿园事业编制教师66名',
-    url: 'http://www.jrzhufu.com/article/99377.html',
-    type: '事业编',
-    tags: ['🆕 新发布', '🔥 66人'],
-    deadline: '2026年5月8日-13日报名',
-    source: '椒江区教育局',
-    date: '2026-05'
-  },
-  {
-    id: 'tz02',
-    city: '台州',
-    title: '路桥区教育局招聘公办幼儿园劳动合同制教师10名',
-    url: 'https://www.shanxiangjiaoyu.com/zixun/20260508/87244.html',
-    type: '劳动合同制',
-    tags: ['🆕 新发布'],
-    deadline: '2026年5月11日-15日报名',
-    source: '路桥区教育局',
-    date: '2026-05'
-  },
-  {
-    id: 'tz03',
-    city: '台州',
-    title: '温岭市公办幼儿园招聘劳动合同制教职工8名',
-    url: 'https://www.shanxiangjiaoyu.com/zixun/20260508/87129.html',
-    type: '劳动合同制',
-    tags: ['🆕 新发布'],
-    deadline: '2026年5月8日-15日报名',
-    source: '温岭市教育局',
-    date: '2026-05'
-  },
-  {
-    id: 'tz04',
-    city: '台州',
-    title: '温岭市教育事业单位公开招聘教师53名（含幼教）',
-    url: 'https://www.xuexinjiaoshi.com/jiaoshi/list.php?catid=10',
-    type: '事业编',
-    tags: ['含幼儿园'],
-    deadline: '2026年5月（具体见公告）',
-    source: '温岭市教育局',
-    date: '2026-05'
-  },
-  {
-    id: 'tz05',
-    city: '台州',
-    title: '仙居县教育局2026年教师招聘18名（含幼教）',
-    url: 'http://qssy.zjks.com/',
-    type: '事业编',
-    tags: ['含幼教'],
-    deadline: '2026年5月15日',
-    source: '浙江省通用招聘网报平台',
-    date: '2026-05'
-  },
-  {
-    id: 'tz06',
-    city: '台州',
-    title: '临海市中小学2026年公开招聘新教师（含幼儿园）',
-    url: 'https://xuexinjiaoshi.com/',
-    type: '事业编',
-    tags: ['含幼儿园'],
-    deadline: '2026年5月',
-    source: '临海市教育局',
-    date: '2026-05'
-  },
-
-  // ── 杭州 ──
-  {
-    id: 'hz01',
-    city: '杭州',
-    title: '杭州高新区（滨江）教育局直属幼儿园招聘聘用制教师28名',
-    url: 'https://www.gaoxiaojob.com/announcement/detail/395309.html',
-    type: '聘用制',
-    tags: ['应届生', '🔥 热门'],
-    deadline: '2026年5月（具体见公告）',
-    source: '高校人才网',
-    date: '2026-04'
-  },
-  {
-    id: 'hz02',
-    city: '杭州',
-    title: '杭州市萧山区招聘幼儿园合同制教师132名',
-    url: 'http://hangzhou.offcn.com/html/2026/04/105102.html',
-    type: '合同制',
-    tags: ['🔥 报名1202人', '已开考'],
-    deadline: '已截止（笔试已结束）',
-    source: '中公教育',
-    date: '2026-04'
-  },
-  {
-    id: 'hz03',
-    city: '杭州',
-    title: '杭州市西湖区景汇幼儿园诚聘幼儿教师（非事业）',
-    url: 'http://www.qtxqjob.com/sydwzp.shtml',
-    type: '非事业编',
-    tags: ['🆕 新发布', '公办'],
-    deadline: '招满即止',
-    source: '钱塘人才网',
-    date: '2026-05'
-  },
-  {
-    id: 'hz04',
-    city: '杭州',
-    title: '杭州市西湖区枫华府第学前教育集团招聘幼儿教师（非事业）',
-    url: 'http://www.eoffcn.com/kszx/detail/2046346.html',
-    type: '非事业编',
-    tags: ['公办集团', '若干名'],
-    deadline: '招满即止',
-    source: '中公教育',
-    date: '2026-04'
-  },
-  {
-    id: 'hz05',
-    city: '杭州',
-    title: '杭州市西湖区都市阳光幼儿园诚聘幼儿教师（非事业）',
-    url: 'https://www.gaoxiaojob.com/rczhaopin/zhejiang/xueqianjiaoshi',
-    type: '非事业编',
-    tags: ['公办', '本科'],
-    deadline: '招满即止',
-    source: '高校人才网',
-    date: '2026-02'
-  },
-
-  // ── 宁波 ──
-  {
-    id: 'nb01',
-    city: '宁波',
-    title: '宁波幼儿师范高等专科学校招聘学前教育专任教师',
-    url: 'https://www.career.zju.edu.cn/jyxt/sczp/zpztgl/ckZpgwXq.zf?zpxxbh=4D1BD1836B5E82B1E0653A68DD0E9B18',
-    type: '事业编',
-    tags: ['高校', '硕博'],
-    deadline: '具体见公告',
-    source: '浙江大学就业网',
-    date: '2026-03'
-  },
-  {
-    id: 'nb02',
-    city: '宁波',
-    title: '宁波市宝韵音乐幼儿园招聘幼儿教师',
-    url: 'https://www.yingjiesheng.com/zhuanye/jiaoyuxue/ningbo/',
-    type: '事业编',
-    tags: ['音乐特色', '应届生可报'],
-    deadline: '2026年3月发布',
-    source: '应届生求职网',
-    date: '2026-03'
-  },
-
-  // ── 绍兴 ──
-  {
-    id: 'sx01',
-    city: '绍兴',
-    title: '绍兴市柯桥区教体系统中小学储备教师招聘（含幼教）',
-    url: 'http://www.jrzhufu.com/zhejiang/',
-    type: '储备教师',
-    tags: ['含幼教'],
-    deadline: '具体见公告',
-    source: '柯桥区教体局',
-    date: '2026-04'
-  },
-  {
-    id: 'sx02',
-    city: '绍兴',
-    title: '新昌中学2026年面向应届高校毕业生招聘教师6名（第三轮）',
-    url: 'https://www.gaoxiaojob.com/column/352.html',
-    type: '事业编',
-    tags: ['应届生'],
-    deadline: '2026年5月',
-    source: '新昌中学',
-    date: '2026-05'
-  },
-
-  // ── 衢州 ──
-  {
-    id: 'qz01',
-    city: '衢州',
-    title: '衢州市龙游县2026学年新教师提前批招聘11名',
-    url: 'https://www.xuexinjiaoshi.com/jiaoshi/list.php?catid=16',
-    type: '事业编',
-    tags: ['提前批', '应届生'],
-    deadline: '2026年4月发布',
-    source: '龙游县教育局',
-    date: '2026-04'
-  },
-  {
-    id: 'qz02',
-    city: '衢州',
-    title: '衢州市开化县事业单位教师招聘',
-    url: 'http://www.yingyudengji.com/zhejiang/news/news_9.html',
-    type: '事业编',
-    tags: ['含幼教'],
-    deadline: '具体见公告',
-    source: '开化县教育局',
-    date: '2026-04'
-  },
+  { city:'丽水',district:'松阳县',title:'松阳县教育系统招聘中小学、幼儿园教师10名（一）',url:'https://www.xuexinjiaoshi.com/jiaoshi/list.php?catid=10',type:'事业编',tags:['🆕'],deadline:'2026年5月（网上报名）',source:'松阳县教育局'},
+  { city:'丽水',district:'龙泉市',title:'龙泉市2026年公开招聘教师11名（含幼教）',url:'https://www.bianzhia.com/zhejiang/lishui/20260508/248687.html',type:'事业编',tags:[],deadline:'2026年5月',source:'龙泉市教育局'},
+  { city:'丽水',district:'缙云县',title:'缙云县2026年新教师招聘（含幼教岗位）',url:'http://www.yingyudengji.com/zhejiang/news/news_109.html',type:'事业编',tags:[],deadline:'具体见公告',source:'缙云县教育局'},
+  { city:'温州',district:'龙港市',title:'龙港市招聘公办幼儿园劳动合同制教师59名（二）',url:'https://www.shanxiangjiaoyu.com/zixun/20260506/86802.html',type:'劳动合同制',tags:['🔥','正在报名'],deadline:'5月8日-13日报名',source:'龙港市社会事业局'},
+  { city:'温州',district:'瓯海区',title:'瓯海区面向全国引进教育人才（含幼教）',url:'http://www.jrzhufu.com/zhejiang/article/13233.html',type:'人才引进',tags:[],deadline:'具体见公告',source:'瓯海区教育局'},
+  { city:'温州',district:'龙湾区',title:'龙湾区天河第二幼儿园招聘非编专任教师',url:'https://job.wzu.edu.cn/news/view/aid/158766/tag/jszp',type:'非事业编',tags:[],deadline:'招满即止',source:'温州大学就业网'},
+  { city:'金华',district:'义乌市',title:'义乌市教育系统公开招聘教师（幼儿园40名）',url:'https://m.jh.bendibao.com/job/30113.shtm',type:'事业编/备案制',tags:['事业编2','备案制38'],deadline:'已截止',source:'义乌市教育局'},
+  { city:'金华',district:'金东区',title:'金东区教体局招聘幼儿园合同制教师30名',url:'http://www.jhparc.com/sydwzpDetails_A9FBFCE7796C589E.shtml',type:'合同制',tags:[],deadline:'2026年4月发布',source:'金东区教体局'},
+  { city:'金华',district:'永康市',title:'永康市机关幼儿园招聘劳动合同制教师6名',url:'http://www.jhlxrc.com/sydwzpDetails_E289C2316FB47477.shtml',type:'劳动合同制',tags:[],deadline:'2026年3月发布',source:'永康市机关事务服务中心'},
+  { city:'台州',district:'椒江区',title:'椒江区招聘中小学、幼儿园事业编制教师66名',url:'http://www.jrzhufu.com/article/99377.html',type:'事业编',tags:['🆕','🔥66人'],deadline:'5月8日-13日报名',source:'椒江区教育局'},
+  { city:'台州',district:'路桥区',title:'路桥区教育局招聘公办幼儿园劳动合同制教师10名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87244.html',type:'劳动合同制',tags:['🆕'],deadline:'5月11日-15日报名',source:'路桥区教育局'},
+  { city:'台州',district:'温岭市',title:'温岭市公办幼儿园招聘劳动合同制教职工8名',url:'https://www.shanxiangjiaoyu.com/zixun/20260508/87129.html',type:'劳动合同制',tags:['🆕'],deadline:'5月8日-15日报名',source:'温岭市教育局'},
+  { city:'台州',district:'温岭市',title:'温岭市教育事业单位公开招聘教师53名',url:'https://www.xuexinjiaoshi.com/jiaoshi/list.php?catid=10',type:'事业编',tags:[],deadline:'2026年5月',source:'温岭市教育局'},
+  { city:'台州',district:'仙居县',title:'仙居县教育局2026年教师招聘18名（含幼教）',url:'http://qssy.zjks.com/',type:'事业编',tags:[],deadline:'5月15日截止',source:'省通用招聘网报平台'},
+  { city:'台州',district:'临海市',title:'临海市中小学2026年新教师招聘（含幼儿园）',url:'https://xuexinjiaoshi.com/',type:'事业编',tags:[],deadline:'2026年5月',source:'临海市教育局'},
+  { city:'杭州',district:'滨江区',title:'高新区（滨江）教育局直属幼儿园招聘聘用制教师28名',url:'https://www.gaoxiaojob.com/announcement/detail/395309.html',type:'聘用制',tags:['应届生','🔥'],deadline:'2026年5月',source:'高校人才网'},
+  { city:'杭州',district:'萧山区',title:'萧山区招聘幼儿园合同制教师132名',url:'http://hangzhou.offcn.com/html/2026/04/105102.html',type:'合同制',tags:['🔥报名1202'],deadline:'已截止（笔试结束）',source:'中公教育'},
+  { city:'杭州',district:'西湖区',title:'西湖区景汇幼儿园诚聘幼儿教师（非事业）',url:'http://www.qtxqjob.com/sydwzp.shtml',type:'非事业编',tags:['🆕'],deadline:'招满即止',source:'钱塘人才网'},
+  { city:'杭州',district:'西湖区',title:'西湖区枫华府第学前教育集团招聘教师（非事业）',url:'http://www.eoffcn.com/kszx/detail/2046346.html',type:'非事业编',tags:[],deadline:'招满即止',source:'中公教育'},
+  { city:'杭州',district:'西湖区',title:'西湖区都市阳光幼儿园诚聘幼儿教师（非事业）',url:'https://www.gaoxiaojob.com/rczhaopin/zhejiang/xueqianjiaoshi',type:'非事业编',tags:[],deadline:'招满即止',source:'高校人才网'},
+  { city:'杭州',district:'富阳区',title:'富阳区2026年教师招聘11名（高层次人才）',url:'http://www.jrzhufu.com/article/99258.html',type:'事业编',tags:['🆕'],deadline:'2026年5月',source:'富阳区教育局'},
+  { city:'宁波',district:'海曙区',title:'海曙区教育局2026学年"专曙优师"教育人才招聘',url:'https://www.nbzhaokao.com/article/20260430/019ddf43fb1a7972afb3be47c2ec4c2e',type:'事业编',tags:['🆕','应届生'],deadline:'5月8日-9日现场确认',source:'海曙区教育局'},
+  { city:'宁波',district:'市直',title:'宁波幼儿师范高等专科学校招聘学前教育专任教师',url:'https://www.career.zju.edu.cn/jyxt/sczp/zpztgl/ckZpgwXq.zf?zpxxbh=4D1BD1836B5E82B1E0653A68DD0E9B18',type:'事业编',tags:['高校','硕博'],deadline:'具体见公告',source:'浙江大学就业网'},
+  { city:'宁波',district:'市直',title:'宁波市宝韵音乐幼儿园招聘幼儿教师',url:'https://www.yingjiesheng.com/zhuanye/jiaoyuxue/ningbo/',type:'事业编',tags:[],deadline:'2026年3月发布',source:'应届生求职网'},
+  { city:'绍兴',district:'上虞区',title:'上虞区2026年教师招聘18名（不限户籍）',url:'https://www.xuexinjiaoshi.com/jiaoshi/list.php?catid=16',type:'事业编',tags:['🆕'],deadline:'2026年4月发布',source:'上虞区教体局'},
+  { city:'绍兴',district:'诸暨市',title:'诸暨市2026年事业编制教师招聘58名（不限户籍）',url:'http://www.jrzhufu.com/news/news_1.html',type:'事业编',tags:['含幼教'],deadline:'2026年4月发布',source:'诸暨市教体局'},
+  { city:'绍兴',district:'柯桥区',title:'柯桥区教体系统中小学储备教师招聘（含幼教）',url:'http://www.jrzhufu.com/zhejiang/',type:'储备教师',tags:[],deadline:'具体见公告',source:'柯桥区教体局'},
+  { city:'衢州',district:'柯城区',title:'柯城区教育局2026年教师招聘24名（西南大学专场）',url:'http://www.jrzhufu.com/article/98336.html',type:'事业编',tags:['🆕','应届生'],deadline:'2026年4月发布',source:'柯城区教育局'},
+  { city:'衢州',district:'龙游县',title:'龙游县2026学年新教师提前批招聘11名',url:'https://www.xuexinjiaoshi.com/jiaoshi/list.php?catid=16',type:'事业编',tags:[],deadline:'2026年4月发布',source:'龙游县教育局'},
+  { city:'衢州',district:'开化县',title:'开化县事业单位教师招聘（含幼教）',url:'http://www.yingyudengji.com/zhejiang/news/news_9.html',type:'事业编',tags:[],deadline:'具体见公告',source:'开化县教育局'},
 ];
-
-const CITY_ORDER = ['丽水', '温州', '金华', '台州', '杭州', '宁波', '绍兴', '衢州'];
-const CITY_ICONS = { '丽水': '🌄', '温州': '🌊', '金华': '🏯', '台州': '🌅', '杭州': '🌊', '宁波': '🌊', '绍兴': '🏛️', '衢州': '🏔️' };
-const CITY_MAP = {
-  'lishui': '丽水', 'wenzhou': '温州', 'jinhua': '金华', 'taizhou': '台州',
-  'hangzhou': '杭州', 'ningbo': '宁波', 'shaoxing': '绍兴', 'quzhou': '衢州'
-};
-
-function render() {
-  const container = document.getElementById('jobsContainer');
-  let html = '';
-  let total = 0;
-
-  CITY_ORDER.forEach(city => {
-    const cityJobs = JOBS.filter(j => j.city === city);
-    if (cityJobs.length === 0) return;
-    total += cityJobs.length;
-
-    const icon = CITY_ICONS[city] || '📍';
-    html += `<div class="city-section" data-city="${city}">`;
-    html += `<div class="city-heading">
-      <span class="city-icon">${icon}</span>
-      <span>${city}</span>
-      <span class="city-count">${cityJobs.length} 条</span>
-    </div>`;
-
-    cityJobs.forEach(job => {
-      const deadlineClass = (job.deadline && job.deadline.includes('截止')) ? 'passed' : '';
-
-      html += `<div class="job-card">
-        <div class="job-title">
-          <a href="${job.url}" target="_blank" rel="noopener noreferrer">${job.title}</a>
-        </div>
-        <div class="meta">
-          <span>${job.type}</span>
-          ${job.tags ? job.tags.map(t => {
-            const cls = t.includes('🆕') ? 'tag-new' : t.includes('🔥') ? 'tag-hot' : '';
-            return `<span class="${cls}">${t}</span>`;
-          }).join('') : ''}
-        </div>
-        ${job.deadline ? `<div class="deadline ${deadlineClass}">⏰ 截止：${job.deadline}</div>` : ''}
-        <div class="source">
-          <span>来源：${job.source}</span>
-          <a href="${job.url}" target="_blank">查看原文 →</a>
-        </div>
-      </div>`;
+const CITY_ORDER = ['丽水','温州','金华','台州','杭州','宁波','绍兴','衢州'];
+const CITY_ICONS = { '丽水':'🌄','温州':'🌊','金华':'🏯','台州':'🌅','杭州':'🌊','宁波':'🌊','绍兴':'🏛️','衢州':'🏔️' };
+const CITY_MAP = { 'lishui':'丽水','wenzhou':'温州','jinhua':'金华','taizhou':'台州','hangzhou':'杭州','ningbo':'宁波','shaoxing':'绍兴','quzhou':'衢州' };
+function render(){
+  const c=document.getElementById('jobsContainer'); let h='', t=0;
+  CITY_ORDER.forEach(city=>{
+    const js=JOBS.filter(j=>j.city===city); if(!js.length)return; t+=js.length;
+    h+=`<div class="city-section" data-city="${city}"><div class="city-heading"><span class="city-icon">${CITY_ICONS[city]||'📍'}</span><span>${city}</span><span class="city-count">${js.length}条</span></div>`;
+    js.forEach(j=>{
+      h+=`<div class="job-card"><div class="job-district">📍 ${j.district}</div><div class="job-title"><a href="${j.url}" target="_blank">${j.title}</a></div><div class="meta"><span>${j.type}</span>${j.tags?j.tags.map(t=>{const c=t.includes('🆕')?'tag-new':t.includes('🔥')?'tag-hot':'';return `<span class="${c}">${t}</span>`}).join(''):''}</div>${j.deadline?`<div class="deadline${(j.deadline.includes('截止')||j.deadline.includes('结束'))?' passed':''}">⏰ ${j.deadline}</div>`:''}<div class="source"><span>来源：${j.source}</span><a href="${j.url}" target="_blank">查看原文 →</a></div></div>`;
     });
-
-    html += `</div>`;
+    h+=`</div>`;
   });
-
-  if (html === '') {
-    html = `<div class="empty-state"><div class="icon">📭</div><p>暂无招聘信息，将持续更新</p></div>`;
-  }
-
-  container.innerHTML = html;
-  document.getElementById('totalCount').textContent = total;
+  c.innerHTML=h||`<div class="empty-state"><div class="icon">📭</div><p>暂无招聘信息</p></div>`;
+  document.getElementById('totalCount').textContent=t;
 }
-
 render();
-
-document.querySelectorAll('.city-tab').forEach(tab => {
-  tab.addEventListener('click', function(e) {
+document.querySelectorAll('.city-tab').forEach(t=>{
+  t.addEventListener('click',function(e){
     e.preventDefault();
-    document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.city-tab').forEach(t=>t.classList.remove('active'));
     this.classList.add('active');
-
-    const targetKey = this.getAttribute('href').slice(1);
-    if (targetKey === 'all') {
-      document.querySelectorAll('.city-section').forEach(s => s.style.display = 'block');
-      document.getElementById('totalCount').textContent = JOBS.length;
-    } else {
-      const targetCity = CITY_MAP[targetKey] || targetKey;
-      document.querySelectorAll('.city-section').forEach(s => {
-        s.style.display = s.dataset.city === targetCity ? 'block' : 'none';
-      });
-      const filteredCount = JOBS.filter(j => j.city === targetCity).length;
-      document.getElementById('totalCount').textContent = filteredCount;
-    }
+    const k=this.getAttribute('href').slice(1);
+    if(k==='all'){document.querySelectorAll('.city-section').forEach(s=>s.style.display='block');document.getElementById('totalCount').textContent=JOBS.length;}
+    else{const c=CITY_MAP[k]||k;document.querySelectorAll('.city-section').forEach(s=>s.style.display=s.dataset.city===c?'block':'none');document.getElementById('totalCount').textContent=JOBS.filter(j=>j.city===c).length;}
   });
 });
 </script>
